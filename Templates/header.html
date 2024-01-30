@@ -1,0 +1,24 @@
+{% load static %}
+<head>
+    <div class="row">
+
+<div class="col-md-9">
+
+
+
+    <img src="{% static 'img/ModestCartlogo.png'%}" height="120px" >
+    </div>
+<div class="col-md-3">
+     <form class="d-flex" role="search" action="{% url 'search_app:searchResult' %}" method="get" style="padding-top:50px;padding-right:10px;">
+
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+         </form>
+</div>
+
+
+</div>
+
+    </div>
+</head>
+

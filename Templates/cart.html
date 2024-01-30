@@ -1,0 +1,347 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+ Welcome to ABC Store where you can purchse variety of iems
+{% endblock %}
+
+{% block title %}
+Modest Cart
+{% endblock %}
+
+{% block content %}
+
+
+
+<!--*******************************************************************************************************************************-->
+
+
+<div class="my-cart-top-section card p-20">
+		<div class="row align-items-center">
+	<div class="grid-container">
+<!--    <div class=" d-md-flex justify-content-between ">-->
+					<div class=" grid-item item1 ">
+						<div class="col-md-12 d-md-flex justify-content-between  mb-3 mb-md-0">
+								<div>
+									<h2>MY CART</h2>
+								</div>
+											<div class="col-md-3 text-right d-flex align-items-right">
+															<input type="button"
+																		class="form-control continue btn--continue-checkout  btn btn-primary w-100"
+
+																		value='CHECKOUT'
+																		id="checkoutitems">
+											</div>
+						</div>
+					</div>
+
+
+
+					  <div class="grid-item item2">
+						  <!--	Order Summery Starts -->
+					<!--	<div class="col-md-3 text-right d-flex align-items-center">-->
+					<!--		<div id="orderSummaryStart" class="col-lg-3 mt-md-3 mt-lg-0">-->
+							<div text-right d-flex align-items-center col-lg-3 mt-md-3 mt-lg-0">
+													<div class="order-summary-out order-summary-cart-out card">
+														<div class="card-heading mb-3">
+															<h3>
+																ORDER SUMMARY</h3>
+														</div>
+
+														<div class="card-content">
+
+																				<div class="Grocery express-delivery js-cart-category-group js-cart-category-group2"  group-name="">
+																					{% for cat,price in cat_price_dic.items %}
+																					<div>
+																					<a class="expand-collapse-single-link"
+																										data-toggle="collapse" role="anchor"
+																					   href=""> <span class="exp-col-link-text text-capitalize"> {{cat}}</span> </span><span class="up-arrow-icon"> </span></a>
+																					</div>
+
+																		<div id="toggle-item2-component" class="collapse show"
+																			aria-expanded="true">
+																			<div class="expand-collapse-single-container">
+																				<div class="row align-items-center align-content-between mb-1">
+																					<div class="col">
+																						<label class="text-gray"> No. of items:</label>
+																					</div>
+																					<div class="col text-right js-group-entry-number-of-items">{{ counter }}</div>
+																				</div>
+																			</div>
+																			<div class="row align-items-center align-content-between mb-1">
+																				<div class="col">
+																					<label class="text-gray"> Total:</label>
+																				</div>
+																				<div class="col text-right label-value">
+																					<span class="text-gray">INR</span>
+																					<span class="font-weight-bold js-group-entry-item-price">{{ price }}</span>
+																				</div>
+																			</div>
+																		</div>
+																	{% endfor %}
+																	</div>
+
+									<!--**************************group************-->
+
+								<div class="grand-total-section">
+												<div class="row align-items-center align-content-between mb-1">
+															<div class="col">
+																Subtotal:
+															</div>
+																<div class="col text-right label-value pricing-value js-cartpage-subtotal">
+																<span><small>INR</small>
+																-------</span>
+																</div>
+												</div>
+
+												<div class="row align-items-center align-content-between mb-1">
+																		<div class="col">
+																				Delivery Fee:
+																		</div>
+																		<div class="col text-right label-value pricing-value " id="deliveryCostValue">
+																		<span>FREE</span>
+																		</div>
+												</div>
+
+									<!-- //New ConvenienceFee Start -->
+											<div class="row convenienceFee-row align-items-center align-content-between mb-1 ">
+															<div class="col">
+																	ConvenienceFee<span style="color:#FF0000" title="We charge a convenience fee for processing/packing the order and it is not refundable." >[?]</span>:
+															</div>
+															<div class="col text-right label-value pricing-value js-cartpage-convenienceFee" id="convenienceFee">
+															<span><small>INR</small>
+																20.00</span>
+															</div>
+											</div>
+								<!-- //New ConvenienceFee End -->
+							<!-- totalSavings -->
+											<div class="row align-items-center align-content-between mb-1 cart-savings-row" style="display:flex;">
+													<div class="col text-green js-cartpage-total-savings">
+														Total Savings:
+													</div>
+															<div class="col text-right label-value text-green pricing-value js-cartpage-total-savings" id="totalSavingsDiv">
+																		<span><small>INR</small> 66.00</span>
+															</div>
+											</div>
+								</div>
+					<!-- totalSavings END -->
+
+									<div class="grand-total-section grand-total-row">
+													 <div class="row align-items-center align-content-between mb-1">
+																	<div class="col">
+																		<span class="font-weight-bold">
+																			Grand Total:</span>
+																	</div>
+																	<div class="col text-right label-value">
+															<span class=" grand-total-price">INR</span>
+
+																<span class="font-weight-bold js-cartpage-total-price grand-total-price">
+																		{{total}}</span>
+																	</div>
+													</div>
+									</div>
+
+
+
+
+											</div>
+
+
+							</div>
+					  </div>
+
+
+
+
+      </div>
+
+
+<!--			Products000000000000000000000000000-->
+  		<div class="grid-item item3">
+
+			<div class="row mb-4">
+										<div class="col-md-4 mb-2 mb-md-0">
+													<h4 class="card-title">
+
+												<span class="text-uppercase font-weight-bold mt-0">Deliver To:</span>
+												<span class="delivery-address d-flex align-items-center"
+												data-areaCode="IN-KL-ER-Tripunithura">
+												<span class="text-truncate mt-0">Tripunithura,&nbsp;Tripunithura&nbsp;</span><a href="">
+											Change</a>
+													</span>
+													</h4>
+										</div>
+
+										<div class="col-md-5 mb-2 mb-md-0 align-self-end">
+											<h4 class="card-title"></h4>
+										</div>
+										<div
+											class="col-md-2  text-lg-right position-relative">
+											<div class="d-inline-block">
+												<ul class="selected-product-options stick-bottom">
+													<li class=""
+														data-groupentrycode="">
+														<a href="">Remove All <i class="fa-solid fa-trash-can"></i></a></li>
+												</ul>
+											</div>
+										</div>
+			</div>
+
+	  <!---------Place to Deliver-End----------------------->
+
+
+
+	 {% if not cart_items %}
+						<div>
+								<div>
+									<br>
+									<h1>
+										Your Shopping Cart is Empty
+									</h1>
+									<br>
+									<p class=""><a href="{% url 'ecommerceapp: allProdCart' %}">Please Click Here to continue Sopping </a></p>
+
+								</div>
+						</div>
+						{% else %}
+						 {% for cart_item in cart_items %}
+<!--Product list....................Cart Display Starts  ...................................................-->
+			<table class="table_cart" style="width:100%">
+			  <tr class="tbrow_cart">
+
+								<td class="tbtd1">
+								<div>
+											<div>
+										<!----Images
+												<div class="cart-img-flex ">----->
+
+														<div class="cart-img">
+
+															<a href="cart_item.product.get_absolute_url"><img src="{{ cart_item.product.img.url}}" alt="" class="float-left rounded custom-image"></a>
+
+														</div>
+
+												</div>
+
+								<!--	</div>----->
+								</div>
+
+
+								</td>
+								<td class="tbtd2" style="padding-left:10px;">
+													<div class="row mb-3 align-items-center">
+
+							<!--								<div>-->
+							<!--									 <div class="col-my-md-8">-->
+																	 <div class="col-md-12">
+																			<div class="">
+																				<div class="cofirm-description mb-3">
+																					<div class="bank-card-title">
+																						<a href="">{{ cart_item.product.name }}</a>
+																						<a>SKU:{{cart_item.product.id}}</a>
+																					</div>
+
+																				</div>
+																			</div>
+																	 </div>
+													</div>
+
+
+													<div class="row mb-3 align-items-center">
+														<div class="col-md-9">
+															<div class="cofirm-description">
+																<div class="bank-card-description">
+																		<div class="row mb-3 align-items-center">
+																			<div class="col-md-3">
+																				<span class="item">
+
+																						<select style="color:#C8C7C5;">
+																								<option selected >1</option>
+
+																								<option  >2</option>
+
+																								<option  >3</option>
+
+																						</select>
+
+
+																				</span>
+																			</div>
+																			<div class="col-md-9">
+																					<span class="item">
+																						<span class="price ">
+																							<span><small>INR&nbsp;</small>{{ cart_item.product.price }}</span>
+																						</span>
+																					</span>
+																			</div>
+
+
+
+
+																		</div>
+
+																</div>
+															</div>
+
+														</div>
+														<div class="col-md-3">
+																<span class="item">
+																	<span class="price ">
+																		&nbsp;<a href="{% url 'cart_app:remove_cart' cart_item.product_id %}" class="custom_a"><i class="fa fa-minus custom-icon"></i></a>
+																		&nbsp;&nbsp;<span><small>Qty:&nbsp;</small>{{ cart_item.quantity }}</span>&nbsp;&nbsp;
+																		<a href=" {% url 'cart_app:add_cart' cart_item.product.id  %}" class="custom_a"><i class="fa fa-plus custom-icon"></i></a>
+																	</span>
+																</span>
+
+
+														</div>
+													</div>
+								</td>
+
+
+								<td class="tbtd3">
+
+											<div class="row mb-3 align-items-left">
+												<div class="col-md-6">
+												   <a style="padding-left:5px;">
+
+													{% if cart_item.product.stock >= 1 %}
+													   <a class="stock in-stock">In Stock</a>
+
+													{% else  %}
+													<a class=" " style="color:red;" >&nbsp;No More Stock</a>
+
+													{% endif %}
+												</div>
+
+<!--												<div class="col-md-3" style="text-align:right;">-->
+
+
+<!--														<a href="{% url 'cart_app:remove_cart' cart_item.product_id %}" style="cursor: pointer;">Remove<i class="fa-solid fa-trash-can"></i></a>-->
+
+
+<!--												</div>-->
+
+											</div>
+
+								</td>
+			  </tr>
+
+			</table>
+<!--------End Product List------------------------------------------------------------------------------->
+{% endfor %}
+	  {% endif %}
+  </div>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+

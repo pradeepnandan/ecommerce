@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+ Welcome to ABC Store where you can purchse variety of iems
+{% endblock %}
+
+{% block title %}
+Modest Cart
+{% endblock %}
+
+{% block content %}
+
+
+
+<!--*******************************************************************************************************************************-->
+<div class="row">
+	<div class="yCmsComponent yComponentWrapper col-lg-9">
+	<div class="my-cart-top-section card p-20">
+		<div class="row align-items-center">
+
+				<div class="col-md-9 d-md-flex justify-content-between align-items-center mb-3 mb-md-0">
+<!--				<div  class="col-lg-9 mt-md-9 ">-->
+							<div>
+							<h2>
+									MY CART</h2>
+							</div>
+							<div class="col-md-3 text-right d-flex align-items-center">
+
+								<input type="hidden" id="expressCheckOutEnable"
+									data-popuptitle="Express Checkout:"
+									value="false">
+								<input type="button"
+									class="form-control continue btn--continue-checkout js-continue-checkout-button js-gtmGA4-begin_checkout js-gtm-continue-checkout-btn btn btn-primary w-100"
+									data-gtm-checkout-page="CART"
+									data-checkout-url="/en-in/cart/checkout"
+									value='CHECKOUT'
+									id="checkoutitems" />
+							</div>
+
+
+				</div>
+<!--			xxxxxxxxxxxxxxxxxxxxxx-->
+
+<!--			xxxxxxxxxxxxxxxxxxxxxx-->
+
+		</div>
+
+	</div>
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<div class="yCmsComponent yComponentWrapper col-lg-9">
+	aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+<div class="row mb-4">
+									<div class="col-md-5 mb-2 mb-md-0">
+												<h4 class="card-title">
+
+											<span class="text-uppercase font-weight-bold mt-0">Deliver To:</span>
+											<span class="delivery-address d-flex align-items-center"
+											data-areaCode="IN-KL-ER-Tripunithura">
+											<span class="text-truncate mt-0">Tripunithura,&nbsp;Tripunithura&nbsp;</span><a href="">
+										Change</a>
+												</span>
+												</h4>
+									</div>
+
+										<div class="col-md-5 mb-2 mb-md-0 align-self-end">
+											<h4 class="card-title"></h4>
+										</div>
+										<div
+											class="col-md-2  text-lg-right position-relative">
+											<div class="d-inline-block">
+												<ul class="selected-product-options stick-bottom">
+													<li class=""
+														data-groupentrycode=""><a
+														href="">Remove All</a></li>
+												</ul>
+											</div>
+										</div>
+								</div>
+	aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+</div>
+
+
+<!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX		-->
+	</div>
+<!--	Order Summery Starts -->
+	<div class="col-md-3 text-right d-flex align-items-center">
+<!--		<div id="orderSummaryStart" class="col-lg-3 mt-md-3 mt-lg-0">-->
+
+								<div class="order-summary-out order-summary-cart-out card">
+									<div class="card-heading mb-3">
+										<h3>
+											ORDER SUMMARY</h3>
+									</div>
+
+									<div class="card-content">
+															<div class="Grocery express-delivery js-cart-category-group js-cart-category-group2"  group-name="IN-COK-LULU-HD-DELIVERY0007296058">
+																				<a class="expand-collapse-single-link"
+																					data-toggle="collapse" role="anchor"
+																					href="#toggle-item2-component"> <span
+																					class="exp-col-link-text text-capitalize"> grocery</span> </span><span class="up-arrow-icon"> <svg>
+																		<use
+																								xlink:href="/_ui/responsive/common/images/theme-lulu-en/images/lulu-icons.svg#up-arrow"></use>
+																		</svg>
+																				</span>
+																				</a>
+
+
+													<div id="toggle-item2-component" class="collapse show"
+														aria-expanded="true">
+														<div class="expand-collapse-single-container">
+															<div class="row align-items-center align-content-between mb-1">
+																<div class="col">
+																	<label class="text-gray"> No. of items:</label>
+																</div>
+																<div class="col text-right js-group-entry-number-of-items">2</div>
+															</div>
+														</div>
+														<div class="row align-items-center align-content-between mb-1">
+															<div class="col">
+																<label class="text-gray"> Total:</label>
+															</div>
+															<div class="col text-right label-value">
+																<span class="text-gray">INR</span> <span
+																	class="font-weight-bold js-group-entry-item-price">250.00</span>
+															</div>
+														</div>
+													</div>
+
+												</div>
+
+				<!--**************************group************-->
+
+			<div class="grand-total-section">
+							<div class="row align-items-center align-content-between mb-1">
+										<div class="col">
+											Subtotal:
+										</div>
+											<div class="col text-right label-value pricing-value js-cartpage-subtotal">
+											<span><small>INR</small>
+											645.00</span>
+											</div>
+							</div>
+
+							<div class="row align-items-center align-content-between mb-1">
+													<div class="col">
+															Delivery Fee:
+													</div>
+													<div class="col text-right label-value pricing-value js-cartpage-delivery-cost" id="deliveryCostValue">
+													<span>FREE</span>
+													</div>
+							</div>
+
+				<!-- //New ConvenienceFee Start -->
+						<div class="row convenienceFee-row align-items-center align-content-between mb-1 ">
+										<div class="col">
+												ConvenienceFee<span style="color:#FF0000" title="We charge a convenience fee for processing/packing the order and it is not refundable." >[?]</span>:
+										</div>
+										<div class="col text-right label-value pricing-value js-cartpage-convenienceFee" id="convenienceFee">
+										<span><small>INR</small>
+											20.00</span>
+										</div>
+						</div>
+			<!-- //New ConvenienceFee End -->
+		<!-- totalSavings -->
+						<div class="row align-items-center align-content-between mb-1 cart-savings-row" style="display:flex;">
+								<div class="col text-green js-cartpage-total-savings">
+									Total Savings:
+								</div>
+										<div class="col text-right label-value text-green pricing-value js-cartpage-total-savings" id="totalSavingsDiv">
+													<span><small>INR</small> 66.00</span>
+										</div>
+						</div>
+			</div>
+<!-- totalSavings END -->
+
+				<div class="grand-total-section grand-total-row">
+								 <div class="row align-items-center align-content-between mb-1">
+												<div class="col">
+													<span class="font-weight-bold">
+														Grand Total:</span>
+												</div>
+												<div class="col text-right label-value">
+										<span class="text-gray grand-total-price">INR</span>
+
+											<span class="font-weight-bold js-cartpage-total-price grand-total-price">
+													665.00</span>
+												</div>
+								</div>
+				</div>
+
+
+
+
+						</div>
+
+
+		</div>
+
+		</div>
+<!--Order Summery Ends-->
+<!--	</div>-->
+
+
+
+</div>
+
+
+
+
+
+
+
+{% endblock %}

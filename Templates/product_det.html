@@ -1,0 +1,77 @@
+{% include "base.html" %}
+{% load static %}
+<!--{%  block metadescription %}-->
+
+<!--        {{ product.description|truncatewords:150}}-->
+
+<!--{% endblock %}-->
+<!--&lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+<!--{% block title %}-->
+<!--    &lt;!&ndash;{% if category %} &ndash;&gt;-->
+<!--        {{product.name}} &#45;&#45;ABC Store-->
+<!--   &lt;!&ndash; {% endif %} &ndash;&gt;-->
+<!--{% endblock %}-->
+<!--&lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;-->
+<!--{% block content %}-->
+<!--<div>-->
+<!--    <div>-->
+<!--        <div>-->
+<!--            <p><a href="{% url 'ecommerceapp:allProdCat'%}">Home </a>|<a href="{{ product.get_url}}">{{ product.category}}</a>|{{ product.name}}</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--  <br>-->
+<!-- <div>-->
+<!--     <div>-->
+<!--         <div>-->
+<!--             <img src="{{product.img.url}}" alt="{{product.name}}">-->
+<!--         </div>-->
+<!--     </div>-->
+<!-- </div>-->
+
+<!--<div>-->
+<!--    <div>-->
+<!--        <h1>{{product.name}}</h1>-->
+<!--        <p>{{product.price}}</p>-->
+<!--         <p>Product Description </p>-->
+<!--         <p>{{product.description}}</p>-->
+<!--        {% if product.stock <= 0 %}-->
+<!--        <p><b> Out of Stock</b></p>-->
+<!--        {% else %}-->
+<!--        <a href="">Add to Cart</a>-->
+<!--        {% endif %}-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<div class="description-block mb-3 mt-md-0">
+<!--<div class="card mb-3" style="max-width: 540px;">-->
+  <div class="row g-0">
+    <div class="col-md-4">
+
+        <img src="{{product.img.url}}" class="img-fluid rounded-start" alt="{{product.name}}">
+    </div>
+    <div class="col-auto">
+      <div class="card-body">
+        <h1 class="card-title">{{product.name}}</h1>
+          <h4>Product Summary</h4>
+						<p><ul><li>{{product.description}}</li></ul></p>
+<!--        <p class="card-text">{{product.description}}</p>-->
+          <p class="card-text"><b>INR.{{product.price}}</b></p>
+                {% if product.stock <= 0 %}
+          <p class="card-text"><small class="text-body-secondary">Out of Stock</small></p>
+
+        {% else %}
+        <a href="">Add to Cart</a>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+</div>
+<!--{% endblock %}-->
+
+
+<div>
+

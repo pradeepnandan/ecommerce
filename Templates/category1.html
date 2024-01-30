@@ -1,0 +1,68 @@
+{% include "base.html" %}
+{% load static %}
+{%  block metadescription %}
+    {% if category %}
+        {{ category.description|truncatewords:150}}
+    {% else %}
+        Welcome to ABC Store where you can purchse variety of iems
+    {% endif %}
+{% endblock %}
+<!-------------------------------------------------------------->
+{% block title %}
+    {% if category %}
+        {{category.name}} --ABC Store
+    {% else %}
+        See Our New Collection
+    {% endif %}
+{% endblock %}
+<!-------------------------------------------------------------->
+{% block content %}
+    {% if category %}
+        <div>
+            <p><a href="{% url 'ecommerceapp:allProdCat'%}">Our Product Collection </a></p>
+        </div>
+    {% endif %}
+    <div>
+
+    {% if category %}
+        <img src="{{category.img.url}}" alt="{{category.name}}">
+
+        <br>
+        <div>
+             <h1>{{category.name}}</h1>
+            <p>{{category.description}}</p>
+        </div>
+    {% else %}
+        <div>
+             <img src="{% static 'img/banner.png' %}" width="1550px" height="550" alt="Our Products">
+        </div>
+        <br>
+        <div>
+            <h1>Our Products Collection </h1>
+            <p> Where does it come from?
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
+        </div>
+
+<!--    {% endif %}-->
+
+  <div>
+    {% for product in products %}
+        <div>
+            <div>
+                <!--a href=" "> <img src="{{ product.img.url}}" alt="{{product.name}}"></a-->
+                <a href="{{product.get_url}}"> <img src="{{ product.img.url}}" alt="{{product.name}}"></a>
+            </div>
+            <div>
+                 <h4> {{ product.name}}</h4>
+                 <p>{{ product.price}}</p>
+            </div>
+        </div>
+  </div>
+    {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
